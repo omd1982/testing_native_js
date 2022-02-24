@@ -1,0 +1,1012 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+      <title>Test</title>
+      <style> 
+          #square {
+              color: rgb(177, 211, 85);
+              font-size: 18px;
+}
+      </style> 
+    </head>
+      <bady >
+        <div id="square"> 
+          Я просто текст HTML
+        </div> 
+        <div> 
+        <button onclick="changeColor('red', 25)">Change the font</button>
+        </div> 
+        <div>
+          Примеры кода на JS pure js
+        </div>
+<script>
+/*
+console.log ( typeof (''))
+console.log (Boolean (''))
+console.log (Boolean (' '))
+console.log ( typeof ({}))
+console.log (Boolean ([12]))
+console.log (typeof null)
+console.log (Boolean (null))
+console.log (typeof (function(){}))
+console.log (Boolean (function(){}))
+
+let num = 2 + '12'
+console.log (Boolean (num))
+console.log (typeof (num))
+console.log (num)
+console.log ('' + 15 + 251)
+console.log ('' -1 + 0)
+console.log ('5' * '4')
+console.log ('5' * 'str')
+console.log (4 + 15 + ' ' + 'px')
+console.log ('str' + 15 + 2)
+console.log ('45' - '25')
+console.log ('str' - '25')
+console.log ('30' - 25)
+console.log (30 - '25')
+console.log (undefined + 5)
+console.log (undefined - 5)
+console.log (undefined * 5)
+console.log (1/0)
+console.log (5 / false)
+console.log (5 / [])
+*/
+
+/*
+console.log (2 == '2')
+console.log (null == undefined)
+console.log (null === undefined)
+console.log ({} == {})
+console.log ([] == [])
+console.log ('123' == 123)
+console.log ('123' === 123)
+console.log ('0' == false)
+console.log ('0' === false)
+console.log (0 == false)
+console.log (0 === false)
+*/
+
+/*
+let num = 25
+let num_2 = num
+num_2 + 25
+console.log ('num:', num)
+console.log ('num_2:', num_2)
+
+let arr = [1, 2, 3]
+let arr_2 = arr
+arr_2.push(4) 
+console.log ('arr:', arr)
+console.log ('arr_2:', arr_2)
+let arr_3 = [1, 2, 3, 4]
+console.log (arr == arr_2)
+console.log (arr_2 == arr_3)
+*/
+
+/*
+// Скоупы
+function fun_A () {
+  let num_A = 25
+  console.log (num_A)
+  function fun_B () {
+    let num_B = 50
+    console.log (num_A, num_B)
+    function fun_C () {
+      let num_C = 75
+      console.log (num_A, num_B, num_C)
+    }
+    fun_C ()
+  }
+  fun_B ()
+}
+fun_A ()
+*/
+
+/*
+console.log (str) //undefined если var,a если let  то - ошибка
+var str = 'string'
+console.log (str)
+*/
+
+/*
+//Expression and Dicloreishinon
+fun(5)
+function fun(param){
+   console.log(param ** 2)
+}
+fun(5)
+
+//fun_2(5) - ошибка 
+let fun_2 = function(param){
+   console.log(param ** 3)
+}
+fun_2(5)
+*/
+/*
+//Поведение переменных внутри скоупа
+let a = 25
+let c = 40
+console.log(a)
+{
+  let b = 2500
+  a = 250 // изменили a в скоупе
+  console.log(a)
+  console.log(c)
+}
+  console.log(a)
+  //console.log(b) - нет доступа
+ */
+
+ /*
+const arr = []
+arr.push(25, 48, 258)
+console.log(arr)
+//arr = 258 - ошибка
+console.log([1, 2, 3] === [1, 2, 3]) //false
+*/
+
+/*
+//Замыкания
+function hello (name){
+    let helloName = 'Hello ' + name
+      return function() {
+        console.log(helloName)
+      }
+}
+let newHelloAlex = hello ('Alex')
+let a = newHelloAlex()
+console.log(a) //undefined
+
+//let newHelloIgor = hello ('Igor')
+//newHelloIgor()
+*/
+
+ /*
+ //Получаем доступ к методам обьекта внутри функции
+ function car(){
+    let arr = ['a1', 'a2', 'a3']
+    return {
+        fmCar(){
+          console.log(arr)
+        },
+        newCar(param){
+        arr.push(param)
+        }
+    }
+ }
+
+let manager = car() 
+manager.fmCar()
+manager.newCar('a4')
+manager.fmCar()
+*/
+
+/*
+let arr = [12, 125, 128, 125478]
+for (var i = 0; i < arr.length; i++){
+  (function(j){
+  setTimeout(()=>{console.log(`i= ${j} arr[i]=${arr[j]}`)}, 1500)
+  })(i)
+}
+*/
+
+/*
+//2-х мерный массив
+let arr_2 = [[12, '125'],[false, {}],['srr', 12348]]
+console.log(typeof(arr_2[0][1])) 
+console.log(arr_2[0][1]) 
+*/
+
+/*
+let arr = []
+for ( let i = 0; i < 10; i++){    
+  console.log(`Ключ - ${i}, значение - ${arr.push(i)}`)
+}
+*/
+
+/*
+let obj = {
+  name: 'Jonn',
+  rezult(param, surName){
+    console.log(`Ты ${param} человек по имени ${this.name} и фамилии ${surName}`)
+  }
+}
+obj.rezult('все знаешь', 'Старк')
+obj.rezult('ничего не знаешь', 'Кевин')
+
+let objName = { name: 'Alex'}
+obj.rezult.call(objName, 'ничего не знаешь', 'Петриков')
+obj.rezult.apply(objName, ['ничего не знаешь', 'Петриков'])
+obj.rezult.call(objName, ...['ничего не знаешь', 'Петриков'])
+obj.rezult.bind(objName, 'ничего не знаешь', 'Петриков')
+*/
+
+/*
+Присвоение переменной то что вернет тернарный оператор
+let num = (5>3)? 'да' : 'нет'
+console.log(num)
+*/
+
+/*
+//Удаление ключа из объекта
+let obj = {a: 12, b: 125, с: 15}
+console.log(obj)
+delete obj.a
+console.log(obj)
+obj.d = 1000
+console.log(obj)
+console.log(Object.values(obj))
+console.log(Object.keys(obj))
+*/
+
+/*
+//Перебираем все элементы в массиве
+let arr = [12, 125, 128, 'str']
+
+console.log(arr.forEach(e => e*2)) // вернет undefined
+
+console.log(arr.map(p => p*2)) // вернет новый массив
+*/
+
+/*
+//Присвоение значений переменным используя диструктуризацию массива
+let arr = [12, 111, 128, 'str']
+let num = 125
+let [ nun_1, nun_2] = arr
+console.log(nun_1, nun_2, num)
+*/
+
+/*
+let a = 2;
+console.log(a += 3); 
+*/
+
+/*
+let obj = {
+  nym: 'number',
+  enterNym(){
+    console.log(this)
+  }
+}
+obj.enterNym()
+*/
+
+/*
+let arr = [12, 158, '125', false, 'str']
+//arr.forEach((e)=>{console.log(e/2)})
+
+for(var i = 0; i<arr.length; i++){
+  ((j)=> {
+  setTimeout(()=>{console.log(`Ключ ${j}, значение ${arr[j] ** 2}`)}, 1500)
+})(i)}
+*/
+
+/*
+console.log('str' * 0) // nan
+console.log('str' ** 0) // 1
+*/
+
+/*
+let obj = {
+  name: 'Alex',
+  info(age, serName){
+    console.log(`Привет ${this.name} твоя фамилия ${serName}, твой возраст ${age}`)
+  }
+}
+obj.info(39, 'Lugovski')
+
+let obj_2 ={name: 'Dima'}
+
+obj.info.call(obj_2, ...[30, 'Zelekov'])
+obj.info.apply(obj_2, [30, 'Zelekov'])
+obj.info.bind(obj_2, 30, 'Zelekov')()
+*/
+
+/*
+function Fun(name, age){
+    this.name = name
+    this.age = age
+    console.log(this)
+}
+let alex = new Fun ('Alex', 39)
+*/
+
+/*
+//  явный способ передачи контекста
+function Fun (){
+  console.log(this)
+}
+let obj = {name: 'Elena', age: 25}
+Fun.apply(obj)
+Fun.call(obj)
+Fun.bind(obj)()
+Fun.apply(obj)
+*/
+
+/*
+let obj_3 = {
+  name: 'Dima',
+  rez(){
+      console.log(this)
+  }
+}
+obj_3.rez()
+*/
+
+/*
+//Постфиксный и префиксный оператор
+let num = 5, num_2 = 10
+let num_3 = ++num, num_4 = num_2++
+console.log(num, num_2, num_3, num_4)
+*/
+
+/*
+let num = 5
+console.log(++num)
+console.log(num)
+console.log(num++)
+console.log(num)
+*/
+
+/*
+//Неточность в JS
+let rez = typeof(null)
+console.log(rez)
+*/
+
+/*
+//Проверка существования свойства в обьекте
+let obj = {a: 12, b: 125}
+console.log('gh' in obj) //fase
+*/
+
+/*
+//Создание экземпляров класса
+class Heator {
+  constructor(name, serName){
+    this.name = name,
+    this.serName = serName
+  }
+  rez(){ console.log(`Привет ${this.name} по фамилии ${this.serName}`)}
+}
+let jon = new Heator ('Alex', 'Lu')
+jon.rez()
+let inga = new Heator ('Inga', 'Gu')
+inga.rez()
+*/
+
+/*
+//Объявление класса в ES5 и ES6
+class Car {
+  constructor(name, age){
+    this.name = name 
+    this.age = age
+  }
+  info(){
+    console.log(`У меня автомобиль ${this.name}, год выпуска - ${this.age}`)
+  }
+}
+let audi = new Car ('Audi', 1990)
+audi.info()
+*/
+
+/*
+let num = num_2 = 10  
+num = 15
+num = - num
+console.log(num, num_2 )  // -15, 10
+console.log(num--) // 15
+console.log(num--) // 14
+console.log(num)  //13
+
+var a = 2
+var c = a++
+console.log(c)  // 2
+var d = ++c  
+conole.log(d)  // 3
+*/
+
+/*
+function Car (name, age) {
+  this.name = name
+  this.age = age
+}
+Car.prototype.rez = function(){console.log(`Мой автомобиль ${this.name}, год выпуска - ${this.age}`)}
+var audi = new Car('Audi', 2005)
+audi.rez()
+console.log(audi)
+console.log(Car.prototype)
+console.log(Car.prototype == audi.__proto__)
+
+console.log(Car.__proto__)
+console.log(Car.constructor)
+*/
+
+/*
+//Ссылки на один и тот же обьект
+let obj = {
+  a: 12, 
+  b: 'str'
+}
+let obj_2 = {
+  c: obj 
+}
+let d = obj
+console.log(obj.a)
+obj_2.c.a = 24
+console.log(obj.a)
+console.log(d)
+*/
+
+/*
+//Прототипы
+let abc = function(param){console.log('string ' + param)}
+abc(965)
+let abcd = function(){}
+
+console.log(abc.__proto__ == Function.prototype)
+console.log(abc.__proto__ == abcd.__proto__)
+*/
+
+/*
+//Создаем экземпляр класса, созданного при помощи функции по старому стандарту
+// и задаем метод при помощи прототипа этого класса
+function Color(a, b){
+  this.a = a
+  this.b = b
+}
+//console.log(this.a)
+Color.prototype.rez = function(){ console.log(`Есть два цвета ${this.a} и ${this.b}`)}
+var newColor = new Color('Белый', 'Черный')
+newColor.rez()
+*/
+
+/*
+let num = 185
+console.log(num.a)
+console.log(num)
+Number.prototype.a = function(){console.log('1000')}
+console.log(num.__proto__ == Number.prototype)
+console.log(num.a)
+*/
+
+/*
+let obj = {a: 12, b:125}
+console.log(obj)
+console.log(obj.__proto__ === Object.prototype)
+*/
+
+/*
+let arr = [12, 128, '125', false, 'str']
+
+for(var i = 0; i < arr.length; i++){
+  (function(e){
+  setTimeout(()=>{console.log(arr[e])}, 2000)
+})(i)
+}
+let [a, b] = arr
+console.log(a, b)
+*/
+
+/*
+//Эмитируем запрос на сервер без промисов
+console.log('Пример запроса на сервер')
+setTimeout(()=>{
+  console.log('Запрос на сервер...')
+  setTimeout(()=>{
+    let obj = {
+      name: 'Alex',
+      id: 1258,
+      port: 185224663
+    }
+    console.log(obj)
+    console.log('Ответ успешно получен')
+    setTimeout(()=>{
+      console.log('Добавляем данные...')
+      obj.api = 'Port200'
+      setTimeout(()=>{
+        console.log('И опять выводим обьект...')
+        console.log(obj)
+        },2500)
+    }, 2000)
+  }, 2000)
+}, 2000)
+*/
+
+/*
+class Test {
+  constructor(a){
+    this.a = a + 25
+  }
+  name(){
+    console.log(this.a)
+  }
+}
+let newTest = new Test(15)
+newTest.name()
+console.log(newTest.__proto__ === Test.prototype)
+console.log(newTest.__proto__.__proto__  ===  Object.prototype)
+console.log(newTest.__proto__.constructor.__proto__  === Function.prototype)
+console.log(newTest.__proto__.__proto__) // обьект
+console.log(newTest.__proto__.__proto__.__proto__ ) //null
+*/
+
+/*
+let isGreater = 4 > 1;
+console.log(typeof(isGreater )) //boolean
+*/
+
+/*
+console.log('Обращение к серверу')
+setTimeout(()=>{
+  console.log('Делаем запрос на сервер')
+  setTimeout(()=>{
+    console.log('Возвращаем данные с сервера')
+    let obj = {
+      name: 'Alex',
+      id: 125852,
+      port: 2000
+    }
+    console.log(obj)
+    setTimeout(()=>{
+      console.log('Изменение данных и вывод нового обьекта')
+      obj.name = 'Dima'
+      obj.car = 'Audi'
+      console.log(obj)
+    }, 2000)
+  }, 2000)
+}, 2000)
+*/
+
+/*
+//Промисы
+let p = new Promise((resolve, reject)=>{
+   return setTimeout(()=>{
+    console.log('Делаем запрос на сервер...')
+    let obj = {
+      name: 'Alex',
+      id: 125852,
+      port: 2000
+    }
+    console.log(obj)
+  resolve(obj)
+  }, 2000)
+})
+
+p.then((obj)=>{
+  setTimeout(()=>{
+      console.log('Изменение данных и вывод нового обьекта...')
+      obj.name = 'Dima'
+      obj.car = 'Audi'
+      console.log(obj)
+  }, 2000)
+})
+*/
+
+/*
+console.log (typeof (''))
+console.log (Boolean (''))
+console.log (typeof ({}))
+console.log (Boolean ([12]))
+console.log ( typeof null)
+console.log (Boolean (null))
+console.log (typeof (function(){}))
+console.log (Boolean (function(){}))
+
+let num = 2 + '12'
+console.log (Boolean (num))
+console.log (typeof (num))
+console.log (num)
+console.log ('' + 15 + 251)
+console.log ('' -1 + 0)
+console.log ('5' * '4')
+console.log ('5' * 'str')
+console.log (4 + 15 + ' ' + 'px')
+console.log ('str' + 15 + 2)
+console.log ('45' - '25')
+console.log ('str' - '25')
+console.log ('30' - 25)
+console.log (30 - '25')
+console.log (undefined + 5)
+console.log (undefined - 5)
+console.log (undefined * 5)
+console.log (1/0)
+console.log (5 / false)
+console.log (5 / [])
+*/
+
+/*
+console.log('Эмитация запроса на сервер')
+let newPro = new Promise((resolve)=>{
+  
+  return setTimeout(()=>{
+    let obj = {
+    name: 'Alex',
+    id: 1458,
+    port: 2000
+  }
+    console.log('Делаем запрос на сервер...')
+    resolve(obj)
+  }, 2000)
+  
+}).then((obj)=>{
+  return setTimeout(()=>{
+    console.log('Возвращаем данные...')
+    console.log(obj)
+  }, 2000)
+  resolve()
+}).then((obj)=>{
+  return setTimeout(()=>{
+  console.log('Изменяем соодержимое обьекта...')
+  obj.name = 'Dima'
+  obj.serName = 'Lusin'
+  resolve(obj)
+}, 2000)
+}).then((obj)=>{
+  return setTimeout(()=>{
+    console.log('Возврвщаем новые данные...')
+    console.log()
+}, 2000)
+}).then((obj)=>{
+  return setTimeout(()=>{
+    console.log('Запрос завершен... Данные получены...')
+}, 2000)
+})
+*/
+
+/*
+//Еще раз обьект
+let obj = {
+  name: 'Alex',
+  serName: 'Lu',
+  info(status, id){
+    console.log(`${this.name} ${this.serName} ${status} ${id}`)
+}}
+let obj_2 = {
+  name: 'Dima',
+  serName: 'Pu'
+}
+obj.info.call(obj_2, 'help', 1345578)
+obj.info.apply(obj_2, ['help', 1345578])
+obj.info.call(obj_2, ...['help', 1345578])
+let a = obj.info.bind(obj_2, 'help', 1345578)
+a()
+*/
+/*
+let arr = [12, '125', false, {}, 'str']
+for (let i = 0; i < arr.length; i++) {
+  if (i < arr.length - 1){
+    console.log(`Ключ ${i}, значение ${arr[i]};`)
+  }else {console.log(`Ключ ${i}, значение ${arr[i]}.`)}
+}
+*/
+
+/*
+let arr = [12, '125', false, {}, 'str']
+for (key in arr){
+  if(key < arr.length -1){
+  console.log(`Ключ ${key}, значение ${arr[key]};`)
+}else {console.log(`Ключ ${key}, значение ${arr[key]}.`)}
+}
+for (arr of arr){
+ console.log(`Значение ${arr}`)
+}
+*/
+
+/*
+//Промисы
+console.log(`Имитируем запрос на сервер`)
+new Promise((resolve, reject)=>{
+  return setTimeout(()=>{
+      console.log(`Делаем запрос...`)
+      let obj = {
+        name: 'Alex',
+        serName: 'Lu',  
+        id: 12445562352,
+        port: 2000
+      }
+      resolve(obj)
+    }, 2000)
+}).then((obj)=>{
+  return setTimeout(()=>{
+      obj.name = 'Dima'
+      obj.car = 'Audi'
+      console.log(`Возврвщаем данные с сервера,
+       Изменяем данные обьекта и возврат нового обьекта...`, obj)    
+    }, 2000)
+}).catch(()=>{console.log('Error...')})
+*/
+
+/*
+//Небольшой пример замыкания
+function fun(param){
+  (function(){
+    console.log(`Вымодим строку и параметр из вышемтоящего скоупа ${param}`)
+  })()
+}
+fun(200)
+*/
+
+/*
+class Car {
+  constructor(speed, engineСapacity, weight, dimensions){
+    this.speed = speed,
+    this.engineСapacity = engineСapacity,
+    this.weight = weight,
+    this.dimensions = dimensions
+
+  }
+  specifications(grade){
+    console.log(`Привет, - это мой автомобиль, вот его характтеристики: скорости - ${this.speed} км/ч, обьем двигателя - ${this.engineСapacity} л.с.,
+    масса - ${this.weight} кг, габариты - ${this.dimensions} мм (длинна х ширина), оценнка этого автомобиля ${grade}`)
+  }
+}
+
+const newCar= new Car(200, 2500, 1500, '1500x2350');
+newCar.specifications(8)
+
+const newCar_2= new Car(180, 3000, 2500, '2000x20050');
+newCar_2.specifications(8)
+*/
+
+/*
+let age = 20
+let time = 9
+let dayWeek = 'san'
+
+if  (age < 18 || time <= 10 || time >= 20 || dayWeek == 'sunday') {
+  console.log('Магазин закрыт')
+} else console.log('Добро пожаловать!')
+*/
+
+/*
+let arr = [12, 'str', '125', {}, false]
+console.log(arr); // - меняется везде т. к. - это не приметив
+let rez = arr.map(a => a/2)
+console.log(arr); // - меняется везде т. к. - это не приметив
+console.log(rez);
+console.log('------------------');
+*/
+
+/*
+const arr = ['a', 'b', 'c'];
+for (const element of arr) {
+  console.log(element);
+}
+*/
+
+/*
+// Меняем свой сво обьекта через параметр функции
+let car_1 = {
+    color: 'red'
+}
+let car_2 = {
+    color: 'grien'
+}
+console.log(`Цвет ПЕРВОГО авто ${car_1.color}`);
+console.log(`Цвет ВТОРОГО авто ${car_2.color}`);
+
+function mevCare(colorCar) {
+    colorCar.color = 'vellow'
+}
+mevCare(car_2)
+console.log(`Цвет ПЕРВОГО авто ${car_1.color}`);
+console.log(`Цвет ВТОРОГО авто ${car_2.color}`);
+*/
+
+/*
+let num = 20
+//let rez = num != 20? `Да, так и есть переменная не равна ${num}` : `Нет, так она точно равна ${num}`
+console.log(num != 20? `Да, так и есть переменная не равна ${num}` : `Нет, так она точно равна ${num}`);
+*/
+
+/*
+//Фильтр элементов
+let arr = [1, 2, 3, 4]
+console.log(arr.filter(a => a >= 3));
+*/
+
+/*
+const arr = ['a', 'b', 'c'];
+for (const element of arr) {
+  console.log(element);
+}
+*/
+
+/*
+let fun = (param) => {
+    let num = 25 + param;
+    function fun_2 (){
+      return console.log( num**3 )
+    }
+    fun_2 ()
+}
+fun(5)
+*/
+
+/*
+let obj = [{a: 12, b: 21}, {a: 102, b: 210}, {a: 120, b: 201}, {a: 102, b: 201}, {a: 112, b: 211}]
+let newObj = obj.map(e =>{console.log(e)} )
+*/
+
+/*
+let array = [10, 20, 30, {}, false]; // инициализируем переменную, содержащую массив числовых значений 
+let double = array.map( currentValue => currentValue * 2 );
+console.log( double )
+*/
+
+/*
+ let obg = {
+    name: 'Alex',
+    surName: 'Lug',
+    information(param_1, param_2){
+      console.log(`Привет, меня зовут ${this.name} фамилия ${this.surName} мой статус ${param_1} и я работаю ${param_2}`) 
+    }
+ }
+ obg.information('Занят', 'Конструктором')
+*/
+
+/*
+console.log('Делаем запрос на сервер');
+    setTimeout(()=>{
+      console.log('Подготовка данных');
+      setTimeout(()=>{
+        let obj = {
+        name: 'Alex',
+        status: 'tr'
+      }
+      console.log('Ответ сервера', obj);
+      setTimeout(()=>{
+        console.log('Данные получены успешно');
+      }, 2000)
+    }, 2000)
+}, 2000)
+*/
+ 
+/*
+function a (param, param_2) {
+  return (param ** param_2)
+  //console.log('123')
+}
+let b = a(2, 8)
+console.log(b)
+*/
+
+/*
+let arr_1 = [];
+for(let i = 0; i < 10; i++){
+  console.log(arr_1.push(i + 1))
+  
+}
+console.log(arr_1)
+*/
+
+/*  
+let a = '245'
+var arr1 = [12, 125, '452', false, '']
+for(var i = 0; i < arr.length; i++){
+      //console.log(i + ' - ' + arr[i])
+      console.log(`${i} -  ${arr1[i]} и еще ${a}`)
+}
+*/
+
+/*
+function fun(params){
+    let arr =[12, 958,'15', { a: 12, b: 125}]
+    return {
+        test(){arr.push(params)},
+        test_2(){arr.splice(1, 1)},
+        test_3(){console.log(arr)}
+}}
+let a = fun(328)
+//console.log(a)
+a.test_3()
+a.test_2()
+a.test_3()
+a.test()
+a.test_3()
+*/
+
+/*
+let arr = []
+var n = 0;
+while (n < 10) {
+  arr.push(n+1)
+  n++
+}
+console.log(arr)
+var j = 0;
+while (j < arr.length) {
+  console.log(`Ключ = ${j}, значение = ${arr[j]}`)
+  j++
+}
+*/
+
+/*
+let arr = [12, 125, 256, 125, 1254]
+//console.log(arr.length)
+for (let i = 0; i < arr.length; i++){
+  if (i == 0) console.log (arr[i] + '- это первый')
+  else if (i < arr.length -1) console.log (arr[i] + ';')
+    else {console.log (arr[i] + '.')}
+}
+*/
+
+/*
+a = 1254; //глоб-я переменная
+console.log(window); // window
+/*
+
+*/
+
+/*
+var hour = 15, isWeekend = true;
+if (hour < 10 || hour > 18 || isWeekend) {
+  alert( 'Офис до 10 или после 18 или в выходной закрыт' );
+} else alert( 'Добро пожаловать' )
+*/
+
+/*
+var num = 10; //- никогда не равна
+function f1(num) {
+  console.log(num);
+}
+function f2() {
+  var num = 20;
+  f1(num); // 10, т.к. [[Scope]] = global scope
+}
+f1(200); // [[Scope]] = global scope
+f2(); // [[Scope]] = global scope
+*/
+
+/*
+var name = 'Петя';
+function getName() {
+  //var name = 'Иван';
+  function displayName() {
+    //var name = 'Дима';
+    console.log(name);  // "Дима"
+  }
+  displayName(); // вызов функции displayName
+}
+getName(); // вызов функции getName
+*/
+
+/*
+var a_10 = 10
+console.log(null || a_10)
+console.log(null && a_10)
+*/
+
+/*
+var variab = 1250;
+
+function output (param) {
+  console.log(variab - param)
+  return 125
+}
+let a = output (300)
+console.log(a)
+*/
+
+/*
+ let obj = {
+  arr: [12, 14, 245],
+  variable: 'string',
+  internalObject: {
+      num_1: 5,
+      num_2: 4
+  },
+  summaNunber(param = 10){
+     return (obj.internalObject.num_1 * obj.internalObject.num_2 + param)
+  }
+}
+
+console.log(obj.summaNunber(2))
+*/
+
+</script>
+<script src='script.js'></script>
+      </bady>
+  </html>
